@@ -393,7 +393,7 @@ placed under `output` in config file.
 5) Run your report config file by calling it with `compare.py`
 
 #### Plotting initialization data
-Initialization data can be plotted by adding a path to it using the key `source`. This data should be in PNNL form (the same form as the simulator outputs). The data can be cropped using `source_limits.start_date` and `source_limits.end_date` and `source_limits.end_date`. This data is feed into each report class just like your simulation
+Initialization data can be plotted by adding a path to it using the key `source`. This data should be in the same form as the simulator outputs. The data can be cropped using `source_limits.start_date` and `source_limits.end_date` and `source_limits.end_date`. This data is feed into each report class just like your simulation
 results.
 
 #### Creating a new Report
