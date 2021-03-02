@@ -29,7 +29,7 @@ python test.py <PATH_TO_SIM_CONFIG_FILE>
 
 ## General Design
 
-AMALIA is built using the architecture illustrated above. Data is loaded through the DataFrame and formatted using a standardized schema (PNNL). From there the data is passed to the Achertypes module, which identifies and transforms fundamental patterns and representations (e.g. user-specific time series) within the data that can easily be utilized in the Features module. The Features module takes some set of archetypes and extracts features that can be implemented in a simulation (e.g. user-specific ARIMA time series predictions for some window). These features are loaded into the Simulation module, which utilizes these features in some defined environment to generate events (e.g. Agent-based simulation). These events are passed to the Output module which reformats the results into the required output form. Finally, there is a global tool module which provides utilities to all other modules. These utilities include caching and a MapReduce function.
+AMALIA is built using the architecture illustrated above. Data is loaded through the DataFrame and formatted using a standardized schema. From there the data is passed to the Achertypes module, which identifies and transforms fundamental patterns and representations (e.g. user-specific time series) within the data that can easily be utilized in the Features module. The Features module takes some set of archetypes and extracts features that can be implemented in a simulation (e.g. user-specific ARIMA time series predictions for some window). These features are loaded into the Simulation module, which utilizes these features in some defined environment to generate events (e.g. Agent-based simulation). These events are passed to the Output module which reformats the results into the required output form. Finally, there is a global tool module which provides utilities to all other modules. These utilities include caching and a MapReduce function.
 
 AMALIA follows a top-down dependency flow, which means the required features are explicitly determined by the simulation, and the required archetypes are determined by the features in use. This simplifies user control over running simulations, ensuring that the majority of the dependencies are handled in-simulation, with the user having to define only the simulation type, data sources, and whatever module parameters exist. Archetypes and features are designed to be generalizable and resuable, in a many-to-one dependency mapping at every stage of AMALIA (i.e. every feature can depend on multiple archetypes, and every simulation can depend on multiple features).
 
@@ -222,7 +222,7 @@ Note how this feature depends on the ExampleArchetype discussed in the previous 
 
 ### The Simulation Module
 
-The simulation pulls multiple features and utilizes them iteratively in order to generate events of the PNNL output schema: `nodeID,nodeUserID,parentID,rootID,actionType,nodeTime,platform`. Event generation of this form should happen explicitly within the simulation stage.
+The simulation pulls multiple features and utilizes them iteratively in order to generate events of the output schema: `nodeID,nodeUserID,parentID,rootID,actionType,nodeTime,platform`. Event generation of this form should happen explicitly within the simulation stage.
 
 To generate a new simulation, follow the form:
 
