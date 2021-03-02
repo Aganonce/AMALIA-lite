@@ -1,0 +1,26 @@
+a comment: Example config for AMALIA.
+include: config/default.yaml
+debug:
+  log_level: INFO
+cache_path: ./.cache/
+enable_cache: true
+use_last_cache: true
+data_loader:
+  Twitter: data/example.csv
+limits:
+  start_date: '2018-04-10 00:00:00'
+  end_date: '2018-04-14 23:59:59'
+  time_delta: 1d
+output:
+  destination: output
+  include_git_hash: false
+response_type_archetype:
+  response_types:
+    Twitter:
+    - reply
+    - retweet
+    - quote
+time_series_archetype:
+  base_actions:
+    YouTube: tweet
+sim_type: PoissonSimulation

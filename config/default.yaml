@@ -1,0 +1,27 @@
+output:
+  header:
+    identifier: AmaliaExample
+  include_git_hash: true
+  destination: output
+limits:
+  time_delta: 1d
+  start_date: '2018-04-10 00:00:00'
+  end_date: '2018-04-14 23:59:59'
+response_type_archetype:
+  response_types:
+    Twitter:
+    - reply
+    - retweet
+    - quote
+time_series_archetype:
+  base_actions:
+    Twitter: tweet
+parallel_poisson_simulation:
+  nodes_per_thread: 100
+use_last_cache: false
+enable_cache: true
+cache_path: "./.cache/"
+dask:
+  n_workers: 1
+  memory_limit: 8GB
+  local_directory: default
