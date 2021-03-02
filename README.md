@@ -425,4 +425,4 @@ Refer to https://www.python.org/dev/peps/pep-0008 for tips on adhering to the ov
 
 ## Acknowledgements
 
-A huge thank you goes out to [Omar Malik](https://github.com/omarkmalik), [Fred Buchanan](https://github.com/Boscillator), and [Sam Cohen](https://github.com/EldritchCrow), who helped design multiple aspects of AMALIA's codebase and helped implement some of its functionality.
+A huge thank you goes out to [Omar Malik](https://github.com/omarkmalik), [Fred Buchanan](https://boscillator.github.io/), and [Sam Cohen](https://github.com/EldritchCrow), who helped design multiple aspects of AMALIA's codebase and helped implement some of its functionality.
